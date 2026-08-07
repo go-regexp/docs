@@ -1,0 +1,22 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="go-regexp">
+  <defs>
+    <linearGradient id="grx" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DC2626"/>
+      <stop offset="1" stop-color="#7F1D1D"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#grx)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <!-- start state -->
+    <circle cx="90" cy="146" r="24"/>
+    <!-- Kleene self-loop over the start state (repetition) -->
+    <path d="M72 128 A 30 30 0 0 1 116 133"/>
+    <path d="M116 133l3 -15 M116 133l-14 3"/>
+    <!-- transition -->
+    <path d="M116 146h30"/>
+    <path d="M146 146l-15 -8 M146 146l-15 8"/>
+    <!-- accept state (double ring) -->
+    <circle cx="172" cy="146" r="24"/>
+    <circle cx="172" cy="146" r="10"/>
+  </g>
+</svg>
