@@ -511,9 +511,9 @@
 <li>100% statement coverage; CI across amd64/arm64 + ppc64le/s390x/riscv64/loong64 (qemu) + wasm.</li>
 </ul>
 <h2 id="example">Example</h2>
-<div class="highlight"><pre><span></span><code><span class="nx">re</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">onigmo</span><span class="p">.</span><span class="nx">MustCompile</span><span class="p">(</span><span class="s">`v\d+\.\d+\.\d+(?=[&quot;&lt;])`</span><span class="p">)</span>
-<span class="nx">got</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">re</span><span class="p">.</span><span class="nx">FindAllString</span><span class="p">(</span><span class="s">`a v1.2.3&quot; b v4.5.6&lt; c v9.9.9 d`</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1">// got == []string{&quot;v1.2.3&quot;, &quot;v4.5.6&quot;}   // v9.9.9 excluded by the lookahead</span>
+<div class="highlight"><pre><span></span><code><span class="nx">re</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">onigmo</span><span class="p">.</span><span class="nx">MustCompile</span><span class="p">(</span><span class="s">`v\d+\.\d+\.\d+(?=["&lt;])`</span><span class="p">)</span>
+<span class="nx">got</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">re</span><span class="p">.</span><span class="nx">FindAllString</span><span class="p">(</span><span class="s">`a v1.2.3" b v4.5.6&lt; c v9.9.9 d`</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">// got == []string{"v1.2.3", "v4.5.6"}   // v9.9.9 excluded by the lookahead</span>
 </code></pre></div>
 <h2 id="install">Install</h2>
 <div class="highlight"><pre><span></span><code>go<span class="w"> </span>get<span class="w"> </span>github.com/go-regexp/engine
